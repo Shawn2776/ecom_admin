@@ -9,7 +9,7 @@ export default function Layout({ children }) {
       <div className="bg-blue-900 w-screen h-screen flex items-center">
         <div className="text-center w-full">
           <button
-            onClick={() => signIn()}
+            onClick={() => signIn("google")}
             className="bg-white p-2 rounded-lg px-4"
           >
             Login with Google
