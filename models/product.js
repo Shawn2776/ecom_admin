@@ -1,7 +1,7 @@
-import { Schema, model } from "mongoose";
+const { Schema, model, models } = require("mongoose");
 
 const ProductSchema = new Schema({
-  name: { type: String, required: true },
+  title: { type: String, required: true },
   description: String,
   price: {
     type: Number,
@@ -9,4 +9,4 @@ const ProductSchema = new Schema({
   },
 });
 
-export const Product = model("Product", ProductSchema);
+export const Product = models.Product || model("Product", ProductSchema);
