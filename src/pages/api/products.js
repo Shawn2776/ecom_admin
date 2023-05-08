@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { Product } from "../../../models/product";
+import { Product } from "../../../models/Product";
 import { monogooseConnect } from "../../../lib/mongoose";
 
 export default async function handler(req, res) {
@@ -17,19 +17,20 @@ export default async function handler(req, res) {
   }
 
   if (method === "POST") {
-    const { title, description, price } = req.body;
+    const { title, description, price, images } = req.body;
 
     const productDoc = await Product.create({
       title,
       description,
       price,
+      images,
     });
     res.json(productDoc);
   }
 
   if (method === "PUT") {
-    const { title, description, price, _id } = req.body;
-    await Product.updateOne({ _id }, { title, description, price });
+    const { title, description, price, images, _id } = req.body;
+    await Product.updateOne({ _id }, { title, description, price, images });
     res.json(true);
   }
 
@@ -39,5 +40,4 @@ export default async function handler(req, res) {
       res.json(true);
     }
   }
-
 }
