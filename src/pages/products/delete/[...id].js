@@ -34,7 +34,7 @@ export default function DeleteProductPage() {
         <h1 className="flex flex-col items-center justify-center">
           <p>Do you reall ywant to delete</p>
           <p>
-            <b>"{productInfo?.title}"</b>?
+            <b>&quo;{productInfo?.title}&quo;</b>?
           </p>
         </h1>
         <div className="flex mt-4 space-x-10">
