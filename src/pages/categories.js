@@ -47,7 +47,6 @@ export default function Categories() {
     const { _id: id } = category;
 
     await axios.delete("/api/categories?id=" + id);
-    console.log(id);
     fetchCategories();
   }
 
